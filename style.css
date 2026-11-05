@@ -1,0 +1,201 @@
+/* ========================================================
+   REVALUE - From Surplus to New Value
+   Custom Design System & Interactive Styling
+   ECTON 2026 - Tim Kompespiking
+   Palette based on REVALUE Design Brief:
+   - Forest Green: #153F32
+   - Deep Forest: #0B2D24
+   - Lime: #D6EE79
+   - Mint: #77CDB8
+   - Warm Cream: #F5F3E9
+   - Orange: #EF9A55
+   - SDG 8: #A21942 | SDG 12: #BF8B2E
+======================================================== */
+
+:root {
+  --color-forest: #153F32;
+  --color-deep-forest: #0B2D24;
+  --color-lime: #D6EE79;
+  --color-mint: #77CDB8;
+  --color-warm-cream: #F5F3E9;
+  --color-orange: #EF9A55;
+  --color-sdg8: #A21942;
+  --color-sdg12: #BF8B2E;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #0B2D24;
+}
+::-webkit-scrollbar-thumb {
+  background: #153F32;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #77CDB8;
+}
+
+/* Preloader */
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s ease-out, visibility 0.6s ease-out;
+}
+#preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.logo-draw-circle {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: drawCircle 1.8s ease-in-out forwards;
+}
+.logo-draw-leaf {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: drawLeaf 1.6s 0.3s ease-in-out forwards;
+}
+@keyframes drawCircle {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes drawLeaf {
+  to { stroke-dashoffset: 0; }
+}
+
+/* Leaf Particle Trail */
+.leaf-trail {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle, #D6EE79 20%, #77CDB8 80%);
+  border-radius: 50% 0 50% 50%;
+  transform: rotate(45deg);
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.9;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  box-shadow: 0 0 12px rgba(214, 238, 121, 0.8);
+}
+
+/* Glassmorphism Classes */
+.glass-nav {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.glass-card {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Gradient Utilities */
+.hero-gradient {
+  background: linear-gradient(135deg, #0B2D24 0%, #153F32 60%, #1f5746 100%);
+}
+.hero-gradient-light {
+  background: linear-gradient(135deg, #F5F3E9 0%, #eaf2e8 50%, #d8ebd3 100%);
+}
+.badge-lime-gradient {
+  background: linear-gradient(135deg, #D6EE79 0%, #b8dc58 100%);
+}
+.process-gradient {
+  background: linear-gradient(90deg, #77CDB8 0%, #D6EE79 100%);
+}
+.text-lime-gradient {
+  background: linear-gradient(135deg, #D6EE79 0%, #77CDB8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-forest-gradient {
+  background: linear-gradient(135deg, #153F32 0%, #0B2D24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 3D Mockup Card & Tilt */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+.mockup-3d-box {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease;
+  will-change: transform;
+}
+.mockup-3d-box:hover {
+  transform: rotateY(-8deg) rotateX(6deg) translateY(-8px);
+}
+
+/* Organization Hierarchy Tree styling */
+.tree-node-card {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.tree-node-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 30px -10px rgba(21, 63, 50, 0.25);
+}
+
+/* Pulsing Badge Effect */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(214, 238, 121, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(214, 238, 121, 0);
+  }
+}
+.pulse-glow {
+  animation: pulseGlow 2.5s infinite;
+}
+
+/* Blob Animation */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(3deg);
+  }
+}
+.animate-float {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+/* Step active indicator */
+.step-dot.active {
+  background-color: #D6EE79;
+  color: #0B2D24;
+  box-shadow: 0 0 0 4px rgba(214, 238, 121, 0.3);
+}
+
+/* Range Slider Styling */
+input[type="range"] {
+  accent-color: #153F32;
+}
+.dark input[type="range"] {
+  accent-color: #D6EE79;
+}
