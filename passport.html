@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Food Passport (QR) | REVALUE Traceability System</title>
+    
+    <!-- Meta SEO & Social -->
+    <meta name="description" content="Laman verifikasi ketertelusuran rantai pasok sirkular pangan REVALUE berbasis Food Passport (QR) dan perhitungan Circularity Score.">
+    <meta name="author" content="Tim Kompespiking (Bimo Satrio, Putra Pangeran Jeremia, Ivan Fadhila)">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        forest: {
+                            50: '#f0f7f4',
+                            700: '#1e533e',
+                            800: '#153F32',
+                            900: '#0B2D24',
+                            950: '#071B15',
+                        },
+                        lime: {
+                            300: '#e5f69c',
+                            400: '#D6EE79',
+                            500: '#b8dc58',
+                        },
+                        mint: {
+                            400: '#77CDB8',
+                            500: '#52bba1',
+                        },
+                        coral: {
+                            500: '#EF9A55',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- QRCode.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #071B15;
+            color: #F3F4F6;
+        }
+    </style>
+</head>
+<body class="min-h-screen py-6 sm:py-12 px-4 sm:px-6 antialiased selection:bg-lime-400 selection:text-forest-950">
+
+    <div class="max-w-5xl mx-auto">
+        <!-- Top Back Navigation & Attribution -->
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+            <a href="index.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-forest-900 hover:bg-forest-800 text-lime-400 text-xs font-bold uppercase tracking-wider border border-forest-700 transition">
+                <i class="fa-solid fa-arrow-left"></i> Kembali ke Website Utama
+            </a>
+            <div class="flex items-center gap-2 text-xs text-gray-400">
+                <span class="w-2 h-2 rounded-full bg-lime-400 animate-pulse"></span>
+                <span>Terverifikasi Resmi: <strong>MBRIO Food Laboratory</strong> & <strong>Halal Indonesia</strong></span>
+            </div>
+        </div>
+
+        <!-- MAIN FOOD PASSPORT CARD (Exact layout matching user reference) -->
+        <div class="p-6 sm:p-10 rounded-3xl bg-forest-900/90 border-2 border-lime-400/40 shadow-2xl relative overflow-hidden">
+            <!-- Background Glow -->
+            <div class="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-lime-400/10 blur-3xl pointer-events-none"></div>
+
+            <!-- Header Row -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-6 border-b border-forest-800">
+                <div>
+                    <span class="text-xs font-mono font-bold tracking-widest text-lime-400 uppercase block">
+                        REVALUE DIGITAL TRACEABILITY SYSTEM
+                    </span>
+                    <h1 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white mt-1" id="passport-title">
+                        Tepung Komposit Wortel & Labu Kuning Sirkular
+                    </h1>
+                    <p class="text-xs text-gray-300 mt-1" id="passport-category">
+                        Bahan Baku B2B (Standardized Composite Flour) • Kehalusan 100 Mesh
+                    </p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+                    <div class="text-left sm:text-right">
+                        <span class="text-[10px] text-gray-400 uppercase font-mono block">Batch Identifier</span>
+                        <span class="text-sm font-mono font-extrabold text-lime-300 px-3.5 py-1.5 rounded-xl bg-forest-950 border border-lime-400/50 inline-block" id="passport-batch-id">
+                            RV-2026-014-SBY
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Batch Switcher Pills -->
+            <div class="flex flex-wrap gap-2 my-6 pt-2">
+                <button onclick="switchBatch('RV-2026-014')" class="batch-pill px-4 py-2 rounded-xl text-xs font-bold uppercase transition bg-forest-800 text-lime-400 border border-lime-400" id="btn-014">
+                    <i class="fa-solid fa-carrot text-orange-400 mr-1.5"></i> Batch #RV-2026-014-SBY (Tepung)
+                </button>
+                <button onclick="switchBatch('RV-2026-022')" class="batch-pill px-4 py-2 rounded-xl text-xs font-bold uppercase transition bg-forest-950 text-gray-300 border border-forest-700" id="btn-022">
+                    <i class="fa-solid fa-lemon text-yellow-400 mr-1.5"></i> Batch #RV-2026-022-MLG (Purée)
+                </button>
+                <button onclick="switchBatch('RV-2026-031')" class="batch-pill px-4 py-2 rounded-xl text-xs font-bold uppercase transition bg-forest-950 text-gray-300 border border-forest-700" id="btn-031">
+                    <i class="fa-solid fa-apple-whole text-red-400 mr-1.5"></i> Batch #RV-2026-031-SDA (Keripik)
+                </button>
+            </div>
+
+            <!-- Card Content Body -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Left 4 Cols: Live QR Code & Circularity Score -->
+                <div class="lg:col-span-4 flex flex-col items-center p-6 rounded-2xl bg-forest-950 border border-forest-700 text-center">
+                    <!-- Live QR Code -->
+                    <div class="bg-white p-3 rounded-2xl shadow-xl mb-3 flex items-center justify-center" id="passport-qr-code">
+                        <!-- QRCode injected via JS -->
+                    </div>
+                    <span class="text-[11px] text-gray-300 font-mono mb-6 flex items-center gap-1.5">
+                        <i class="fa-solid fa-camera text-lime-400"></i> Pindai dengan kamera ponsel
+                    </span>
+
+                    <!-- Circularity Score Widget -->
+                    <div class="w-full p-4 rounded-xl bg-forest-900 border border-lime-400/30">
+                        <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest block">Circularity Score</span>
+                        <div class="text-4xl font-black text-lime-400 my-1" id="passport-score">94/100</div>
+                        <div class="w-full bg-forest-950 h-2.5 rounded-full overflow-hidden my-2">
+                            <div class="bg-gradient-to-r from-mint-400 to-lime-400 h-full rounded-full" id="passport-score-bar" style="width: 94%;"></div>
+                        </div>
+                        <span class="text-[10px] font-extrabold text-mint-300 tracking-wider uppercase">GRADE A+ CIRCULAR PROCESS</span>
+                    </div>
+
+                    <!-- Reduksi Emisi Box -->
+                    <div class="w-full mt-4 p-3.5 rounded-xl bg-emerald-950/60 border border-emerald-800 text-left">
+                        <div class="flex items-center gap-2 text-xs font-bold text-emerald-300">
+                            <i class="fa-solid fa-tree text-emerald-400"></i>
+                            <span>Reduksi Emisi Batch Ini:</span>
+                        </div>
+                        <div class="text-lg font-black text-white mt-0.5" id="passport-carbon">7,44 kg CO₂-eq</div>
+                        <div class="text-[10px] text-gray-400" id="passport-carbon-sub">Setara menanam 0,34 pohon / batch</div>
+                    </div>
+                </div>
+
+                <!-- Right 8 Cols: 3 Information Blocks -->
+                <div class="lg:col-span-8 space-y-5">
+                    
+                    <!-- BLOCK 1: UPSTREAM TRACEABILITY -->
+                    <div class="p-5 rounded-2xl bg-forest-950/80 border border-forest-700">
+                        <h2 class="text-xs font-bold uppercase tracking-wider text-lime-400 mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-location-crosshairs"></i> 1. JEJAK ASAL-USUL HULU (UPSTREAM TRACEABILITY)
+                        </h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                            <div>
+                                <span class="text-gray-400 block">Mitra Pemasok Surplus:</span>
+                                <span class="font-bold text-white text-sm" id="passport-source">Hotel Bintang 4 & Supermarket Surabaya Timur</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-400 block">Waktu Penjemputan Logistik:</span>
+                                <span class="font-semibold text-gray-200" id="passport-time">01 Nov 2026, 19:30 WIB (Cold-Box 12°C)</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-400 block">Massa Bahan Segar Diselamatkan:</span>
+                                <span class="font-semibold text-lime-300" id="passport-input">3,20 kg Surplus Grade B Segar</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-400 block">Hasil Keluaran Olahan Terstandar:</span>
+                                <span class="font-semibold text-gray-200" id="passport-output">1,00 kg Tepung Kering Terstandar (Yield 31,25%)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BLOCK 2: PARAMETER QC & LAB MBRIO -->
+                    <div class="p-5 rounded-2xl bg-forest-950/80 border border-forest-700">
+                        <h2 class="text-xs font-bold uppercase tracking-wider text-lime-400 mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-flask-vial"></i> 2. PARAMETER PENGOLAHAN & KENDALI MUTU (QC)
+                        </h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                            <div>
+                                <span class="text-gray-400 block">Metode Transformasi:</span>
+                                <span class="font-semibold text-gray-200" id="passport-method">Low-Temp Dehydration 55°C (10 Jam) & 100-Mesh Milling</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-400 block">Hasil Uji Kadar Air (Moisture):</span>
+                                <span class="font-bold text-lime-300 text-sm" id="passport-moisture">7,1% (Standar Maks. ≤ 8,0%)</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-400 block">Water Activity / Derajat Keasaman:</span>
+                                <span class="font-semibold text-gray-200" id="passport-water-act">0,52 aw (Anti Jamur & Bakteri)</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-400 block">Validasi Lab MBRIO:</span>
+                                <span class="font-semibold text-emerald-400" id="passport-lab">Passed - Bebas Salmonella, E. coli, & Kapang Khamir</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BLOCK 3: LEGALITAS & UMUR SIMPAN -->
+                    <div class="p-5 rounded-2xl bg-forest-950/80 border border-forest-700">
+                        <h2 class="text-xs font-bold uppercase tracking-wider text-lime-400 mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-shield-halved"></i> 3. LEGALITAS, UMUR SIMPAN & REKOMENDASI
+                        </h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs mb-3">
+                            <div>
+                                <span class="text-gray-400 block">Sertifikasi & Kepatuhan:</span>
+                                <span class="font-semibold text-gray-200" id="passport-legal">Tersertifikasi 100% Halal Indonesia & Standar CPPOB BPOM</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-400 block">Masa Simpan Terverifikasi (ASLT):</span>
+                                <span class="font-bold text-lime-300 text-sm" id="passport-shelf">9 Bulan (Best Before: 02 Ags 2027)</span>
+                            </div>
+                        </div>
+                        <div class="pt-3 border-t border-forest-800 text-xs">
+                            <span class="text-gray-400 block mb-1">Rekomendasi Aplikasi Pengolahan Hilir:</span>
+                            <p class="text-gray-200 leading-relaxed" id="passport-rec">
+                                Substitusi 15%–25% tepung terigu untuk bakery, bolu, cookies, pastry, dan mi sayur sehat.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 6.4: METODOLOGI PERHITUNGAN CIRCULARITY SCORE & EMISI GRK -->
+            <div class="mt-8 pt-8 border-t border-forest-800">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="w-2.5 h-2.5 rounded-full bg-lime-400"></span>
+                    <h2 class="text-sm font-bold uppercase tracking-wider text-lime-400">
+                        BAB 6.4: Metodologi Ilmiah Circularity Score & Reduksi Emisi GRK
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs text-gray-300">
+                    <!-- Rumus Circularity Score -->
+                    <div class="p-5 rounded-2xl bg-forest-950 border border-forest-700">
+                        <span class="font-bold text-white text-sm block mb-2">A. Rumus Matematis Circularity Score (CS):</span>
+                        <div class="p-3 rounded-xl bg-forest-900 font-mono text-lime-300 text-xs my-2 border border-forest-800">
+                            CS = (0,50 × R_mass) + (0,30 × Q_shelf) + (0,20 × E_pack)
+                        </div>
+                        <ul class="space-y-1.5 text-[11px] text-gray-300">
+                            <li>• <strong>R_mass (50%):</strong> Rasio pemulihan massa pangan edible portion (rata-rata 96).</li>
+                            <li>• <strong>Q_shelf (30%):</strong> Indeks perpanjangan umur simpan &ge; 30x lipat dari 3 hari ke 90–180 hari (skor 95).</li>
+                            <li>• <strong>E_pack (20%):</strong> Efisiensi radius jemput lokal &lt; 15 km & vacuum packaging (skor 87,5).</li>
+                        </ul>
+                        <div class="mt-3 p-2 rounded-lg bg-lime-400/10 text-lime-400 font-mono text-xs font-bold text-center">
+                            CS = (0,50 × 96) + (0,30 × 95) + (0,20 × 87,5) = 48,0 + 28,5 + 17,5 = 94,0 (94/100)
+                        </div>
+                    </div>
+
+                    <!-- Rumus Emisi GRK Bappenas -->
+                    <div class="p-5 rounded-2xl bg-forest-950 border border-forest-700">
+                        <span class="font-bold text-white text-sm block mb-2">B. Rumus Reduksi Emisi GRK (Faktor Emisi Bappenas):</span>
+                        <div class="p-3 rounded-xl bg-forest-900 font-mono text-lime-300 text-xs my-2 border border-forest-800">
+                            ΔE(CO₂-eq) = M_rescued × 2,32424 kg CO₂-eq/kg
+                        </div>
+                        <ul class="space-y-1.5 text-[11px] text-gray-300">
+                            <li>• <strong>Basis Output (Kapasitas 300 kg/bln):</strong><br>300 kg × 2,32424 = <strong>697,27 kg CO₂-eq/bln</strong> (8,37 ton/thn).</li>
+                            <li>• <strong>Basis Input (Surplus Segar 600 kg/bln):</strong><br>600 kg × 2,32424 = <strong>1.394,54 kg CO₂-eq/bln</strong> (16,73 ton/thn).</li>
+                        </ul>
+                        <div class="mt-3 p-2 rounded-lg bg-emerald-400/10 text-emerald-300 text-[11px] text-center">
+                            Data terintegrasi otomatis ke <strong>Automated ESG Dashboard</strong> mitra korporasi.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attribution Footer -->
+                <div class="mt-6 pt-4 border-t border-forest-800/80 flex flex-col sm:flex-row justify-between items-center text-[11px] text-gray-400 gap-2">
+                    <div>
+                        Sistem & Dashboard dirancang oleh: <strong class="text-lime-300">Bimo Satrio (CEO & Lead System Architect)</strong>
+                    </div>
+                    <div>
+                        Tim Kompespiking • ECTION 2026 Universitas Negeri Surabaya (UNESA)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const batches = {
+            'RV-2026-014': {
+                id: 'RV-2026-014-SBY',
+                title: 'Tepung Komposit Wortel & Labu Kuning Sirkular',
+                category: 'Bahan Baku B2B (Standardized Composite Flour) • Kehalusan 100 Mesh',
+                source: 'Hotel Bintang 4 & Supermarket Surabaya Timur',
+                time: '01 Nov 2026, 19:30 WIB (Cold-Box 12°C)',
+                input: '3,20 kg Surplus Grade B Segar',
+                output: '1,00 kg Tepung Kering Terstandar (Yield 31,25%)',
+                method: 'Low-Temp Dehydration 55°C (10 Jam) & 100-Mesh Milling',
+                moisture: '7,1% (Standar Maks. ≤ 8,0%)',
+                waterAct: '0,52 aw (Anti Jamur & Bakteri)',
+                lab: 'Passed - Bebas Salmonella, E. coli, & Kapang Khamir',
+                legal: 'Tersertifikasi 100% Halal Indonesia & Standar CPPOB BPOM',
+                shelf: '9 Bulan (Best Before: 02 Ags 2027)',
+                rec: 'Substitusi 15%–25% tepung terigu untuk bakery, bolu, cookies, pastry, dan mi sayur sehat.',
+                score: 94,
+                carbon: '7,44 kg CO₂-eq',
+                carbonSub: 'Setara menanam 0,34 pohon / batch'
+            },
+            'RV-2026-022': {
+                id: 'RV-2026-022-MLG',
+                title: 'Purée Mangga & Pisang Matang Beku Terstandar',
+                category: 'Bahan Baku B2B (Vacuum-Sealed Frozen Purée) • Homogenized Pulper',
+                source: 'Sentra Grosir Buah & Kafe Jaringan Malang Raya',
+                time: '03 Nov 2026, 08:30 WIB (Cold-Box 8°C)',
+                input: '2,55 kg Buah Surplus Matang Optimal',
+                output: '2,00 kg Purée Segar Bebas Biji & Kulit (Yield 78,4%)',
+                method: 'Pasteurisasi Termal 78°C (15 Menit) + Rapid Chilling',
+                moisture: 'Kadar Padatan Terlarut (Brix) 18°',
+                waterAct: 'pH 4,2 (Asam Sitrat Alami Food-Grade)',
+                lab: 'Passed - Standar Mikrobiologi Olahan Buah BPOM',
+                legal: 'Tersertifikasi Halal & Higienis CPPOB BPOM',
+                shelf: '6 Bulan Beku pada -18°C (Best Before: 03 Mei 2027)',
+                rec: 'Bahan baku isian (filling) roti manis, selai artisan, smoothies kafe, dan gelato lokal.',
+                score: 96,
+                carbon: '5,92 kg CO₂-eq',
+                carbonSub: 'Setara reduksi emisi 24 km berkendara motor'
+            },
+            'RV-2026-031': {
+                id: 'RV-2026-031-SDA',
+                title: 'Keripik Buah & Sayur Dehidrasi Rendah Minyak',
+                category: 'Lini Ritel B2C (Crispy Dehydrated Chips) • Stand Up Foil Pouch',
+                source: 'Pasar Induk Agrobisnis Sidoarjo & Supermarket Lokal',
+                time: '04 Nov 2026, 20:00 WIB (Cold-Box 10°C)',
+                input: '0,95 kg Irisan Apel & Wortel Grade B',
+                output: '150 Gram Keripik Dehidrasi Bebas Minyak Jahat (Yield 15,8%)',
+                method: 'Dehidrator Sirkulasi Udara 58°C (12 Jam)',
+                moisture: '4,5% (Kering Renyah Maksimal)',
+                waterAct: '0,41 aw (Masa Simpan Sangat Stabil)',
+                lab: 'Passed - Uji Sensori, Angka Lempeng Total Sesuai Syarat',
+                legal: '100% Bahan Nabati Alami Tanpa Pengawet Sintetis',
+                shelf: '12 Bulan (Best Before: 04 Nov 2027)',
+                rec: 'Camilan sehat tinggi serat untuk mahasiswa, pekerja urban, dan keluarga peduli bumi.',
+                score: 92,
+                carbon: '2,21 kg CO₂-eq',
+                carbonSub: '100% Zero-Waste to Landfill'
+            }
+        };
+
+        let currentQr = null;
+
+        function switchBatch(key) {
+            const b = batches[key];
+            if (!b) return;
+
+            document.getElementById('passport-title').textContent = b.title;
+            document.getElementById('passport-category').textContent = b.category;
+            document.getElementById('passport-batch-id').textContent = b.id;
+            document.getElementById('passport-source').textContent = b.source;
+            document.getElementById('passport-time').textContent = b.time;
+            document.getElementById('passport-input').textContent = b.input;
+            document.getElementById('passport-output').textContent = b.output;
+            document.getElementById('passport-method').textContent = b.method;
+            document.getElementById('passport-moisture').textContent = b.moisture;
+            document.getElementById('passport-water-act').textContent = b.waterAct;
+            document.getElementById('passport-lab').textContent = b.lab;
+            document.getElementById('passport-legal').textContent = b.legal;
+            document.getElementById('passport-shelf').textContent = b.shelf;
+            document.getElementById('passport-rec').textContent = b.rec;
+            document.getElementById('passport-score').textContent = `${b.score}/100`;
+            document.getElementById('passport-score-bar').style.width = `${b.score}%`;
+            document.getElementById('passport-carbon').textContent = b.carbon;
+            document.getElementById('passport-carbon-sub').textContent = b.carbonSub;
+
+            // Render live QR Code
+            const qrContainer = document.getElementById('passport-qr-code');
+            qrContainer.innerHTML = '';
+            const liveUrl = window.location.href.split('?')[0] + `?batch=${b.id}`;
+            if (typeof QRCode !== 'undefined') {
+                new QRCode(qrContainer, {
+                    text: liveUrl,
+                    width: 140,
+                    height: 140,
+                    colorDark: '#0B2D24',
+                    colorLight: '#ffffff',
+                    correctLevel: QRCode.CorrectLevel.H
+                });
+            }
+
+            // Update button styles
+            ['btn-014', 'btn-022', 'btn-031'].forEach(btnId => {
+                const btn = document.getElementById(btnId);
+                btn.className = 'batch-pill px-4 py-2 rounded-xl text-xs font-bold uppercase transition bg-forest-950 text-gray-300 border border-forest-700';
+            });
+            const activeMap = { 'RV-2026-014': 'btn-014', 'RV-2026-022': 'btn-022', 'RV-2026-031': 'btn-031' };
+            const activeBtn = document.getElementById(activeMap[key]);
+            if (activeBtn) {
+                activeBtn.className = 'batch-pill px-4 py-2 rounded-xl text-xs font-bold uppercase transition bg-forest-800 text-lime-400 border border-lime-400';
+            }
+        }
+
+        // Check URL Query Param ?batch=
+        const urlParams = new URLSearchParams(window.location.search);
+        const batchParam = urlParams.get('batch');
+        if (batchParam && batchParam.includes('022')) {
+            switchBatch('RV-2026-022');
+        } else if (batchParam && batchParam.includes('031')) {
+            switchBatch('RV-2026-031');
+        } else {
+            switchBatch('RV-2026-014');
+        }
+    </script>
+</body>
+</html>

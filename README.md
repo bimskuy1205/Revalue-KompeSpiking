@@ -5,13 +5,14 @@
 > **Ketua Tim:** Bimo Satrio  
 > **Anggota 1:** Putra Pangeran Jeremia  
 > **Anggota 2:** Ivan Fadhila  
+> **GitHub Repository:** [https://github.com/bimskuy1205/Revalue-KompeSpiking](https://github.com/bimskuy1205/Revalue-KompeSpiking)
 
 ---
 
 ## 📌 1. Tentang REVALUE
-**REVALUE** adalah inovasi ekosistem *Micro Circular Hub* berbasis *cloud kitchen* terstandarisasi yang menyelamatkan surplus pangan segar layak olah (*edible surplus food* Grade B) dari mitra hulu (perhotelan, ritel modern, pasar induk, dan katering). Melalui teknologi *Adaptive Upcycling* (dehidrasi suhu rendah dan pembekuan higienis), REVALUE mengubah bahan berumur pendek (2–3 hari) menjadi komoditas bahan baku industri pangan B2B (tepung komposit dan purée beku) berumur simpan 6–12 bulan yang teruji di laboratorium mikrobiologi independen **MBRIO Food Laboratory**, berstandar BPOM, dan tersertifikasi Halal.
+**REVALUE** adalah ekosistem *Micro Circular Hub* berbasis *cloud kitchen* terstandarisasi yang menyelamatkan surplus pangan segar layak olah (*edible surplus food* Grade B) dari mitra hulu (perhotelan, ritel modern, pasar induk, dan katering). Melalui teknologi *Adaptive Upcycling* (dehidrasi suhu rendah dan pembekuan higienis), REVALUE mengubah bahan berumur pendek (2–3 hari) menjadi komoditas bahan baku industri pangan B2B (tepung komposit dan purée beku) berumur simpan 6–12 bulan yang teruji di laboratorium mikrobiologi independen **MBRIO Food Laboratory**, berstandar BPOM, dan tersertifikasi Halal.
 
-Setiap kemasan produk REVALUE terhubung dengan kode unik **Digital Food Passport (QR Code)** dan algoritma metrik otomatis **Circularity Score (0–100)** untuk transparansi asal-usul bahan dan penghitungan reduksi emisi gas rumah kaca ($2,32424\text{ kg CO}_2\text{-eq/kg}$).
+Setiap kemasan produk REVALUE terhubung dengan kode unik **Digital Food Passport (QR Code)** yang memuat 5 blok informasi terverifikasi dan algoritma metrik otomatis **Circularity Score (0–100)** serta penghitungan reduksi emisi gas rumah kaca ($2,32424\text{ kg CO}_2\text{-eq/kg}$).
 
 ---
 
@@ -20,14 +21,15 @@ Setiap kemasan produk REVALUE terhubung dengan kode unik **Digital Food Passport
 Sesuai model organisasi berbasis proyek (*Project-Oriented Functional Structure*), berikut adalah pembagian peran dan rincian jobdesk operasional:
 
 ### 👑 Ketua Tim — BIMO SATRIO
-* **Jabatan Utama:** *Chief Executive Officer (CEO) & Head of Business Development*
+* **Jabatan Utama:** *Chief Executive Officer (CEO) & Lead System & ESG Dashboard Architect*
 * **Tanggung Jawab & Jobdesk Operasional:**
-  1. Memimpin perumusan visi strategis bisnis, arsitektur *Business Model Canvas (BMC)* 9 blok, dan peta jalan ekspansi 3 tahun REVALUE.
-  2. Bertanggung jawab penuh atas akuisisi dan negosiasi kontrak kemitraan pasokan surplus hulu dengan pihak hotel bintang 3–5, jaringan supermarket modern, katering industri, dan pengelola pasar induk.
-  3. Memimpin penetrasi penjualan langsung (*direct sales*) bahan baku tepung komposit dan purée ke klaster UMKM bakery dan industri kuliner lokal di koridor Surabaya–Sidoarjo–Malang.
-  4. Merancang dan mengeksekusi skema langganan berulang (*recurring revenue*) untuk program *Circular Partnership* dan lisensi perangkat lunak *Food Passport QR*.
-  5. Mengelola alokasi modal awal CapEx (Rp34,5 Juta) dan arus kas bulanan OpEx (Rp14,25 Juta) untuk memastikan tercapainya titik impas (BEP) dan payback period 5,1 bulan.
-  6. Bertindak sebagai *lead presenter* (pembicara utama) yang mewakili tim pada sesi pitching penjurian ECTION 2026 UNESA dan forum investor.
+  1. Merancang dan memimpin spesifikasi antarmuka serta arsitektur sistem *Automated ESG & Circular Supply Chain Dashboard* REVALUE.
+  2. Memimpin perumusan visi strategis bisnis, arsitektur *Business Model Canvas (BMC)* 9 blok, dan peta jalan ekspansi 3 tahun REVALUE.
+  3. Bertanggung jawab penuh atas akuisisi dan negosiasi kontrak kemitraan pasokan surplus hulu dengan pihak hotel bintang 3–5, jaringan supermarket modern, katering industri, dan pengelola pasar induk.
+  4. Memimpin penetrasi penjualan langsung (*direct sales*) bahan baku tepung komposit dan purée ke klaster UMKM bakery dan industri kuliner lokal di koridor Surabaya–Sidoarjo–Malang.
+  5. Merancang dan mengeksekusi skema langganan berulang (*recurring revenue*) untuk program *Circular Partnership* dan lisensi perangkat lunak *Food Passport QR*.
+  6. Mengelola alokasi modal awal CapEx (Rp34,5 Juta) dan arus kas bulanan OpEx (Rp14,25 Juta) untuk memastikan tercapainya titik impas (BEP Rp11,19 Juta/bln) dan payback period 5,1 bulan.
+  7. Bertindak sebagai *lead presenter* (pembicara utama) yang mewakili tim pada sesi pitching penjurian ECTION 2026 UNESA dan forum investor.
 
 ### 🧪 Anggota 1 — PUTRA PANGERAN JEREMIA
 * **Jabatan Utama:** *Chief Operating Officer (COO) & Head of Food Technology & QC*
@@ -51,80 +53,70 @@ Sesuai model organisasi berbasis proyek (*Project-Oriented Functional Structure*
 
 ---
 
-## 🎨 3. Palet Warna & Desain (Sesuai Design Brief Poster)
-* **Forest Green (`#153F32`):** Warna identitas utama dan *heading*, memberikan kesan alami, stabil, dan tepercaya.
-* **Deep Forest (`#0B2D24`):** Latar hero & permukaan *dark mode*.
-* **Lime (`#D6EE79`):** Aksen pertumbuhan, penunjuk alur, *badge*, dan *highlight* angka surplus.
-* **Mint (`#77CDB8`):** Warna transisi dan aksen teknologi/pelacakan digital.
-* **Warm Cream (`#F5F3E9`):** Latar belakang *light mode*, menjaga kesan pangan organik yang hangat.
-* **Orange/Coral (`#EF9A55`):** Aksen penanda surplus pangan.
-* **SDG 8 (`#A21942`) & SDG 12 (`#BF8B2E`):** Aksen warna resmi *Sustainable Development Goals*.
+## 🔬 3. Spesifikasi Teknis Bab 6.4: Arsitektur Digital Food Passport (QR) & Metodologi Perhitungan
+
+### A. 5 Blok Informasi Terverifikasi Food Passport (QR):
+1. **Identitas Batch:** Nomor Batch (`#RV-2026-014-SBY`), Nama Produk (*Upcycled Carrot & Pumpkin Composite Flour*), Berat Bersih (1.000 g), Tanggal Produksi, dan Tanggal Kedaluwarsa (+9 bulan).
+2. **Jejak Hulu (Origin Traceability):** Asal Mitra Penyedia Surplus (Hotel Bintang 4 & Supermarket Ritel Surabaya Timur), Waktu Penjemputan (01 Nov 2026, 19.30 WIB - Cold Box 12°C), dan Massa Bahan Segar Diselamatkan (3,20 kg).
+3. **Jejak Proses & Parameter Mutu QC:** Metode Olah (*Low-Temp Dehydration 55°C & 100-Mesh Milling*), Kadar Air Aktual (7,1% ≤ 8,0%), Status Mikrobiologi (*Passed — Verified via MBRIO Food Laboratory*), dan Sertifikat Halal.
+4. **Metrik Dampak Lingkungan:** Berat Food Loss yang Dicegah (3,20 kg segar) dan Jumlah Emisi GRK yang Dihindari (7,44 kg CO₂-eq).
+5. **Circularity Score:** Indeks penilaian sirkularitas 94/100 (Grade A+ Circular Process).
+
+### B. Rumus Matematis Circularity Score:
+$$\text{CS} = (0,50 \times R_{\text{mass}}) + (0,30 \times Q_{\text{shelf}}) + (0,20 \times E_{\text{pack}})$$
+* $R_{\text{mass}} = 96$ (Tingkat pemulihan massa edible portion)
+* $Q_{\text{shelf}} = 95$ (Perpanjangan umur simpan $\ge 30\times$ lipat dari 3 hari ke 90–180 hari)
+* $E_{\text{pack}} = 87,5$ (Efisiensi radius jemput lokal $< 15\text{ km}$ & kemasan vakum)
+$$\text{CS} = (0,50 \times 96) + (0,30 \times 95) + (0,20 \times 87,5) = 48,0 + 28,5 + 17,5 = 94,0 \quad (\mathbf{94/100})$$
+
+### C. Rumus Emisi GRK Bappenas:
+$$\Delta E_{\text{CO}_2} = M_{\text{rescued}} \times 2,32424\text{ kg CO}_2\text{-eq/kg}$$
+* **Basis Output (300 kg/bln):** $300 \times 2,32424 = 697,27\text{ kg CO}_2\text{-eq/bln} \ (8,37\text{ ton CO}_2\text{-eq/thn})$.
+* **Basis Input (600 kg/bln):** $600 \times 2,32424 = 1.394,54\text{ kg CO}_2\text{-eq/bln} \ (16,73\text{ ton CO}_2\text{-eq/thn})$.
 
 ---
 
-## 🚀 4. Panduan Menjalankan & Menguji di Komputer Lokal
+## 🎨 4. Palet Warna & Desain (Sesuai Design Brief Poster)
+* **Forest Green (`#153F32`):** Identitas utama, tombol, dan judul (alami, stabil, tepercaya).
+* **Deep Forest (`#0B2D24`):** Latar hero & permukaan *Dark Mode*.
+* **Lime (`#D6EE79`):** Aksen pertumbuhan, penunjuk alur, *badge*, dan *highlight* angka surplus.
+* **Mint (`#77CDB8`):** Transisi dan aksen teknologi/pelacakan digital.
+* **Warm Cream (`#F5F3E9`):** Latar belakang *Light Mode*, kesan pangan organik.
+* **Orange/Coral (`#EF9A55`):** Aksen penanda surplus pangan.
+* **SDG 8 (`#A21942`) & SDG 12 (`#BF8B2E`):** Aksen warna resmi tujuan pembangunan berkelanjutan.
 
-### Opsi A — Langsung Buka File (Paling Sederhana)
-1. Buka File Explorer di Windows.
-2. Masuk ke folder: `C:\Users\ASUS\.gemini\antigravity\scratch\revalue-web-profile`
-3. Klik ganda pada file `index.html`. File akan langsung terbuka di browser Anda (Chrome, Edge, Firefox, dll).
+---
 
-### Opsi B — Menggunakan Local Server Python
-Karena Python sudah terpasang di komputer Anda, jalankan perintah berikut di PowerShell:
+## 🚀 5. Panduan Step-by-Step Push ke GitHub & Deploy ke Vercel
+
+### Step 1: Push ke GitHub (bimskuy1205/Revalue-KompeSpiking)
+Semua berkas proyek telah siap di folder komputer Anda. Karena GitHub memerlukan otentikasi akun Anda (Personal Access Token / Browser Login), jalankan perintah berikut di PowerShell atau Command Prompt Anda:
+
 ```powershell
 cd C:\Users\ASUS\.gemini\antigravity\scratch\revalue-web-profile
-python -m http.server 3000
+git push -u origin master
 ```
-Buka browser dan akses: `http://localhost:3000`
+*(Atau jika Anda ingin menggunakan branch `main`:)*
+```powershell
+git branch -M main
+git push -u origin main
+```
+> **Catatan Otentikasi GitHub:**
+> Jika muncul jendela login GitHub di layar Anda, klik **"Sign in with your browser"** atau masukkan Personal Access Token (PAT) GitHub Anda. Seketika semua berkas akan terunggah ke repositori `https://github.com/bimskuy1205/Revalue-KompeSpiking`.
 
 ---
 
-## 🌐 5. Panduan Step-by-Step Deploy ke Vercel (Bisa Diakses Publik)
-
-Website ini dirancang secara statis modern (*vanilla HTML5, Tailwind CSS, modern ES6 JS*), sehingga **sangat cepat di-deploy ke Vercel, bebas error build, dan langsung aktif dalam 1 menit!**
-
-### Cara 1: Deploy via GitHub + Vercel (Rekomendasi Terbaik & Otomatis)
-1. **Inisialisasi Git di Folder Proyek:**
-   Buka terminal PowerShell dan jalankan:
-   ```powershell
-   cd C:\Users\ASUS\.gemini\antigravity\scratch\revalue-web-profile
-   git init
-   git add .
-   git commit -m "feat: initial commit web profile revalue kompespiking"
-   ```
-
-2. **Buat Repositori Baru di GitHub:**
-   - Buka [https://github.com/new](https://github.com/new).
-   - Beri nama repositori, misal: `revalue-web-profile`.
-   - Pilih **Public**, lalu klik **Create repository**.
-
-3. **Hubungkan & Push ke GitHub:**
-   Jalankan perintah dari GitHub (sesuaikan dengan username Anda):
-   ```powershell
-   git remote add origin https://github.com/<USERNAME-ANDA>/revalue-web-profile.git
-   git branch -M main
-   git push -u origin main
-   ```
-
-4. **Impor ke Vercel:**
-   - Kunjungi [https://vercel.com](https://vercel.com) dan masuk (*Login*) menggunakan akun GitHub Anda.
-   - Di dashboard Vercel, klik tombol **"Add New..."** lalu pilih **"Project"**.
-   - Temukan repositori `revalue-web-profile` yang baru Anda buat, lalu klik **"Import"**.
-   - Pada bagian *Framework Preset*, biarkan default (**Other**).
-   - Klik tombol **"Deploy"**.
-
-5. **Selesai! 🎉**
-   Dalam kurun waktu 15–30 detik, Vercel akan memberikan domain publik gratis yang aktif selamanya, misalnya:
-   `https://revalue-web-profile.vercel.app`
-
----
-
-### Cara 2: Deploy Drag-and-Drop via Vercel Web Dashboard (Tanpa Git)
-1. Buka [https://vercel.com](https://vercel.com) dan login.
-2. Masuk ke tab **Deployments** atau seret folder proyek:
-   - Kompres seluruh isi folder `revalue-web-profile` menjadi file `.zip` (pastikan di dalam zip langsung berisi `index.html`, `style.css`, `app.js`, `vercel.json`, dan folder `assets`).
-   - Unggah ke Vercel Dashboard melalui fitur *Deploy Static Project*.
-3. Website akan langsung aktif dan live!
+### Step 2: Deploy ke Vercel (Gratis & Aktif untuk Umum)
+1. Buka peramban ke **[vercel.com](https://vercel.com)** dan login menggunakan akun GitHub Anda.
+2. Di Dashboard Vercel, klik tombol **"Add New..."** ➔ pilih **"Project"**.
+3. Cari repositori **`bimskuy1205/Revalue-KompeSpiking`** lalu klik tombol **"Import"**.
+4. Pada form konfigurasi:
+   * **Framework Preset:** Pilih `Other` (atau biarkan default).
+   * **Root Directory:** `./`
+   * **Build and Output Settings:** Biarkan default (tanpa build command, karena ini static HTML modern).
+5. Klik tombol biru **"Deploy"**.
+6. **Selesai! 🎉**  
+   Dalam kurun waktu 15–20 detik, Vercel akan menghasilkan URL publik aktif (misalnya `https://revalue-kompespiking.vercel.app`), lengkap dengan halaman utama `index.html` dan laman verifikasi Food Passport interaktif `passport.html`.
 
 ---
 
@@ -133,40 +125,18 @@ Website ini dirancang secara statis modern (*vanilla HTML5, Tailwind CSS, modern
 ```
 revalue-web-profile/
 │
-├── index.html                   # Halaman utama profil web REVALUE yang komprehensif & interaktif
-├── style.css                    # Desain custom, palet warna Design Brief, animasi 3D tilt, glassmorphism
-├── app.js                       # Mesin interaktif: Dark/Light Mode, Food Passport Batch Switcher,
-│                                # Kalkulator Finansial Dinamis, Filter BMC, Modal Profil Tim, SOP Stepper
-├── vercel.json                  # Konfigurasi deployment Vercel (clean URLs, caching, security headers)
-├── README.md                    # Dokumentasi lengkap & petunjuk operasional
+├── index.html                   # Halaman web profile utama REVALUE yang super interaktif & lengkap
+├── passport.html                # Laman verifikasi Food Passport QR interaktif (terbuka saat QR di-scan)
+├── style.css                    # Sistem styling Design Brief, 3D tilt, dark/light mode, glassmorphism
+├── app.js                       # Logika interaktif: QR generator, kalkulator finansial, modal profil tim
+├── vercel.json                  # Konfigurasi caching, clean URLs, dan headers keamanan hosting Vercel
+├── README.md                    # Dokumentasi komprehensif & panduan operasional
 │
 └── assets/
-    └── survei-pasar-validasi.jpg # Bukti infografis survei pasar empiris (B2B & B2C)
+    ├── mockup-dashboard-revalue.png       # Mockup resolusi tinggi Dashboard ESG (Arsitek: Bimo Satrio)
+    ├── mockup-dashboard-revalue.jpg       # Format JPEG mockup dashboard
+    ├── survei-pasar-validasi-lengkap.jpg  # Infografis survei pasar revisi (foto asli B2B & B2C + mockup dashboard)
+    ├── survei-pasar-validasi-lengkap.png  # Format PNG survei pasar revisi lengkap
+    ├── survei-pasar-validasi.jpg          # Berkas aktif yang ditampilkan di website
+    └── food-passport-ui-ref.jpg           # Berkas referensi kartu Food Passport UI
 ```
-
----
-
-## 💡 7. Fitur-Fitur Interaktif Unggulan pada Website
-
-1. **Dark & Light Mode Switch:** Palet warna otomatis tersimpan di browser (*localStorage*).
-2. **Animated Preloader:** Animasi gambar logo sirkular daun & buah REVALUE yang estetik.
-3. **Cursor Leaf Particles:** Jejak partikel organik saat kursor mouse digerakkan.
-4. **3D Interactive Hero Mockup:** Mockup kemasan dan Food Passport dengan efek *3D Tilt* saat diarahkan mouse.
-5. **Live Digital Food Passport QR Simulator:**
-   - Memilih 3 varian batch: *Batch #RV-2026-014* (Tepung Wortel & Labu), *Batch #RV-2026-022* (Purée Mangga & Pisang), *Batch #RV-2026-031* (Keripik Buah).
-   - Menghasilkan kode QR dinamis dengan pustaka *QRCode.js*.
-   - Menampilkan lembar sertifikat lab mikrobiologi MBRIO, kadar air, aktivitas air, serta skor sirkularitas (94/100).
-6. **Kalkulator Finansial & Sensitivitas Interaktif:**
-   - *Slider* volume produksi bulanan (100 kg hingga 1.000 kg).
-   - Otomatis menghitung ulang: Omzet bulanan, biaya tetap, biaya variabel, surplus operasional, rasio margin, BEP Rupiah, dan *Payback Period*.
-7. **Filter 4 Zona Fungsional BMC 9-Blok:**
-   - Memfilter elemen berdasarkan Zona A (Hulu & Operasi), Zona B (Jantung Nilai), Zona C (Relasi & Pasar), dan Zona D (Mesin Finansial).
-8. **Stepper Alur Operasional 6 Tahap (Rescue to Return):**
-   - Rincian SOP langkah demi langkah, standar higienitas, dan neraca massa pengolahan (*mass balance*).
-9. **Bagan Struktur Organisasi & Modal Detail Jobdesk:**
-   - Menampilkan bagan hierarki resmi Ketua (Bimo Satrio) dan Anggota (Putra Pangeran Jeremia & Ivan Fadhila).
-   - Klik kartu untuk membuka pop-up modal profil mendalam dengan rincian jobdesk, KPI terukur, dan daftar keahlian.
-10. **Infografis Lightbox Survei Pasar:**
-    - Perbesar gambar infografis survei lapangan (Kampoeng Roti & Grosir Kalpataru) dengan satu klik.
-11. **Formulir Kemitraan Interaktif:**
-    - Form simulasi pemesanan sampel gratis B2B dan penjemputan surplus hulu dengan notifikasi respons langsung.

@@ -954,6 +954,63 @@
                                 </p>
                             </div>
                         </div>
+
+                        <!-- CTA to dedicated standalone verification page -->
+                        <div class="pt-2 flex flex-wrap items-center justify-between gap-4">
+                            <a href="passport.html?batch=RV-2026-014-SBY" target="_blank" class="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-lime-400 hover:bg-lime-500 text-forest-950 font-black text-xs uppercase tracking-wider shadow-lg hover:scale-105 transition-all duration-300">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Buka Laman Penuh Verifikasi Food Passport (Passport.html)
+                            </a>
+                            <span class="text-xs text-mint-300 font-mono">
+                                <i class="fa-solid fa-check-circle text-lime-400 mr-1"></i> Siap Scan Ponsel (Kamera / QR Scanner)
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6.4 ARSITEKTUR DIGITAL FOOD PASSPORT & METODOLOGI PERHITUNGAN CIRCULARITY SCORE -->
+                <div class="mt-10 pt-8 border-t border-forest-800">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="w-3 h-3 rounded-full bg-lime-400 animate-ping"></span>
+                        <h4 class="text-base sm:text-lg font-black text-lime-300 uppercase tracking-wider">
+                            Bab 6.4: Arsitektur Digital Food Passport (QR) & Metodologi Perhitungan Circularity Score
+                        </h4>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs text-gray-300">
+                        <!-- Rumus Circularity Score -->
+                        <div class="p-6 rounded-2xl bg-forest-900/90 border border-forest-700/80">
+                            <h5 class="text-sm font-bold text-white mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-calculator text-lime-400"></i> Rumus Matematis Circularity Score (CS):
+                            </h5>
+                            <div class="p-3.5 rounded-xl bg-forest-950 font-mono text-lime-300 text-xs border border-forest-800 my-2">
+                                CS = (0,50 × R_mass) + (0,30 × Q_shelf) + (0,20 × E_pack)
+                            </div>
+                            <ul class="space-y-2 text-[11px] text-gray-300 leading-relaxed">
+                                <li>• <strong>R_mass (Bobot 50%):</strong> Persentase massa pangan edible portion yang diselamatkan (zero waste to landfill ≈ 96%). Nilai: <strong>96</strong>.</li>
+                                <li>• <strong>Q_shelf (Bobot 30%):</strong> Rasio perpanjangan umur simpan &ge; 30x lipat (dari 3 hari menjadi 90–180 hari). Nilai: <strong>95</strong>.</li>
+                                <li>• <strong>E_pack (Bobot 20%):</strong> Efisiensi radius jemput lokal &lt; 15 km & vacuum packaging. Nilai: <strong>87,5</strong>.</li>
+                            </ul>
+                            <div class="mt-3 p-3 rounded-xl bg-lime-400/10 border border-lime-400/30 text-lime-400 font-mono text-xs font-bold text-center">
+                                CS = (0,50 × 96) + (0,30 × 95) + (0,20 × 87,5) = 48,0 + 28,5 + 17,5 = 94,0 (Skor: 94/100)
+                            </div>
+                        </div>
+
+                        <!-- Rumus Reduksi Emisi GRK Bappenas -->
+                        <div class="p-6 rounded-2xl bg-forest-900/90 border border-forest-700/80">
+                            <h5 class="text-sm font-bold text-white mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-leaf text-mint-400"></i> Rumus Reduksi Emisi Gas Rumah Kaca (Bappenas EF):
+                            </h5>
+                            <div class="p-3.5 rounded-xl bg-forest-950 font-mono text-lime-300 text-xs border border-forest-800 my-2">
+                                ΔE(CO₂-eq) = M_rescued × 2,32424 kg CO₂-eq/kg
+                            </div>
+                            <ul class="space-y-2 text-[11px] text-gray-300 leading-relaxed">
+                                <li>• <strong>Basis Output Terkonservatif (300 kg/bln):</strong><br>300 kg × 2,32424 = <strong>697,27 kg CO₂-eq/bulan</strong> (8,37 ton CO₂-eq/tahun).</li>
+                                <li>• <strong>Basis Input Surplus Segar (600 kg/bln):</strong><br>600 kg × 2,32424 = <strong>1.394,54 kg CO₂-eq/bulan</strong> (16,73 ton CO₂-eq/tahun).</li>
+                            </ul>
+                            <div class="mt-3 p-3 rounded-xl bg-emerald-950/60 border border-emerald-800 text-emerald-300 text-xs text-center">
+                                Terkoneksi langsung ke <strong>Automated ESG Dashboard</strong> (Arsitek Sistem: <strong>Bimo Satrio</strong>).
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1201,7 +1258,7 @@
                                 <h5 class="font-bold text-white text-base">Validasi B2B: UMKM Kampoeng Roti & Grosir Buah Kalpataru</h5>
                             </div>
                             <p class="text-xs text-gray-300 leading-relaxed">
-                                Memvalidasi ketersediaan pasokan surplus buah segar secara konsisten setiap minggu di tingkat grosir, serta mengonfirmasi minat beli UMKM bakery terhadap bahan baku tepung komposit alami dengan harga di bawah Rp50.000/kg.
+                                <strong>Dokumentasi Lapangan:</strong> Wawancara langsung dengan manajemen <strong>Kampoeng Roti</strong> dan pengelola <strong>Grosir Buah Kalpataru</strong>. Mengonfirmasi pasokan surplus buah segar grade B harian, pola distribusi cold-box, serta tingginya minat UMKM bakery terhadap tepung komposit alami terstandar dengan harga hemat &le; Rp50.000/kg.
                             </p>
                         </div>
 
@@ -1210,21 +1267,43 @@
                                 <span class="w-8 h-8 rounded-lg bg-mint-400/20 text-mint-400 flex items-center justify-center font-bold">
                                     <i class="fa-solid fa-graduation-cap"></i>
                                 </span>
-                                <h5 class="font-bold text-white text-base">Validasi B2C: 3 Responden Mahasiswa Lintas Fakultas</h5>
+                                <h5 class="font-bold text-white text-base">Validasi B2C: Responden Mahasiswa FBIPK, FV & FH</h5>
                             </div>
                             <p class="text-xs text-gray-300 leading-relaxed">
-                                Melibatkan mahasiswa dari <strong>Fakultas Hukum (FH)</strong>, <strong>Fakultas Vokasi (FV)</strong>, dan <strong>FBIPK</strong>. Menunjukkan tingkat penerimaan 100% terhadap makanan olahan sirkular dengan catatan kebersihan teruji lab dan desain kemasan modern.
+                                <strong>Dokumentasi Lapangan:</strong> Melibatkan 3 perwakilan mahasiswa dari <strong>Fakultas Bahasa & Ilmu Pendidikan Kreatif (FBIPK)</strong>, <strong>Fakultas Vokasi (FV)</strong>, dan <strong>Fakultas Hukum (FH)</strong>. Memvalidasi preferensi rasa alami, penerimaan harga pasar, kemasan food-grade ramah lingkungan, serta dukungan tinggi terhadap produk olahan pencegah food waste.
                             </p>
+                        </div>
+
+                        <!-- Dashboard Mockup Highlight (Bimo Satrio) -->
+                        <div class="p-5 rounded-2xl bg-gradient-to-r from-forest-950 to-forest-900 border-2 border-lime-400/40">
+                            <div class="flex items-center justify-between gap-3 mb-2">
+                                <div class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-chart-pie text-lime-400"></i>
+                                    <h5 class="font-black text-white text-sm">Automated ESG & Supply Chain Dashboard</h5>
+                                </div>
+                                <span class="px-2.5 py-0.5 rounded-full bg-lime-400/20 text-lime-400 text-[10px] font-bold uppercase">
+                                    Arsitek: Bimo Satrio
+                                </span>
+                            </div>
+                            <p class="text-xs text-gray-300 leading-relaxed mb-3">
+                                Dirancang khusus oleh <strong>Bimo Satrio (CEO)</strong> untuk menyediakan transparansi metrik reduksi emisi CO₂-eq real-time, neraca massa pangan, dan pelacakan batch terintegrasi MBRIO Lab.
+                            </p>
+                            <div class="flex items-center gap-3">
+                                <a href="assets/mockup-dashboard-revalue.png" target="_blank" class="px-3.5 py-1.5 rounded-lg bg-forest-800 hover:bg-forest-700 text-lime-300 text-[11px] font-bold border border-lime-400/40 inline-flex items-center gap-1.5 transition">
+                                    <i class="fa-solid fa-image"></i> Buka Gambar Mockup (PNG)
+                                </a>
+                                <span class="text-[10px] text-gray-400">Tercantum pada infografis survei pasar revisi</span>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Survey Poster Preview Thumbnail -->
+                    <!-- Survey Poster Preview Thumbnail (Updated with Dashboard preview inserted in bottom-left) -->
                     <div class="lg:col-span-5 flex justify-center">
                         <div class="relative group cursor-pointer overflow-hidden rounded-2xl border-2 border-lime-400/40 shadow-xl" onclick="openSurveyLightbox()">
-                            <img src="assets/survei-pasar-validasi.jpg" alt="Poster Survei Pasar REVALUE" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                            <img src="assets/survei-pasar-validasi-lengkap.jpg" alt="Poster Survei Pasar REVALUE Revisi Lengkap" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute inset-0 bg-forest-950/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
                                 <span class="px-4 py-2 rounded-xl bg-lime-400 text-forest-900 font-bold text-xs uppercase flex items-center gap-2">
-                                    <i class="fa-solid fa-magnifying-glass-plus"></i> Lihat Infografis Penuh
+                                    <i class="fa-solid fa-magnifying-glass-plus"></i> Lihat Infografis Revisi Lengkap
                                 </span>
                             </div>
                         </div>
@@ -1532,9 +1611,9 @@
                         <i class="fa-solid fa-chess-king text-2xl"></i>
                     </div>
                     <h3 class="font-black text-lg text-gray-900 dark:text-white">BIMO SATRIO</h3>
-                    <div class="text-forest-800 dark:text-lime-300 text-xs font-bold uppercase tracking-wider mt-1">Ketua Tim / Chief Executive Officer</div>
+                    <div class="text-forest-800 dark:text-lime-300 text-xs font-bold uppercase tracking-wider mt-1">Ketua Tim / Chief Executive Officer (CEO)</div>
                     <span class="inline-block mt-3 px-3 py-1 rounded-full bg-forest-800/10 dark:bg-lime-400/20 text-forest-800 dark:text-lime-400 text-[10px] font-extrabold uppercase tracking-widest">
-                        Business Dev & Partnerships
+                        Lead System & Dashboard Architect • Head of Business Dev
                     </span>
                     <div class="text-[11px] text-gray-500 dark:text-gray-400 mt-2 flex items-center justify-center gap-1">
                         <span>Lihat Jobdesk Lengkap</span> <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
@@ -1596,13 +1675,14 @@
                             <div>
                                 <span class="text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded bg-forest-100 dark:bg-forest-900 text-forest-800 dark:text-lime-300">Ketua Tim</span>
                                 <h4 class="text-xl font-black text-gray-900 dark:text-white mt-1">Bimo Satrio</h4>
-                                <p class="text-xs font-semibold text-gray-500 dark:text-gray-400">Chief Executive Officer (CEO)</p>
+                                <p class="text-xs font-semibold text-gray-500 dark:text-gray-400">Chief Executive Officer & Lead System/Dashboard Architect</p>
                             </div>
                         </div>
                         <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-                            Memimpin arah visi bisnis, negosiasi kontrak pasokan surplus hulu (hotel/supermarket/pasar), strategi penetrasi B2B ke UMKM bakery, serta manajemen arus kas CapEx & OpEx.
+                            Memimpin arah visi bisnis, perancangan arsitektur antarmuka Automated ESG Dashboard, integrasi Food Passport QR, negosiasi pasokan surplus hulu (hotel/supermarket/pasar), strategi penetrasi B2B ke UMKM bakery, serta manajemen arus kas CapEx & OpEx.
                         </p>
                         <div class="space-y-1.5 text-xs text-gray-700 dark:text-gray-300 mb-6">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-lime-500"></i> Perancang & Pengembang Automated ESG Dashboard</div>
                             <div class="flex items-center gap-2"><i class="fa-solid fa-check text-lime-500"></i> Lead Presenter ECTION 2026 UNESA</div>
                             <div class="flex items-center gap-2"><i class="fa-solid fa-check text-lime-500"></i> Kontrak B2B & Kemitraan ESG</div>
                             <div class="flex items-center gap-2"><i class="fa-solid fa-check text-lime-500"></i> Manajemen Finansial & Target BEP</div>
@@ -2044,10 +2124,10 @@
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
             <div class="w-full overflow-y-auto max-h-[85vh] flex justify-center p-2">
-                <img src="assets/survei-pasar-validasi.jpg" alt="Hasil Survei Pasar REVALUE Lengkap" class="rounded-xl max-w-full h-auto shadow-2xl">
+                <img src="assets/survei-pasar-validasi-lengkap.jpg" alt="Hasil Survei Pasar REVALUE Lengkap Revisi" class="rounded-xl max-w-full h-auto shadow-2xl">
             </div>
             <p class="text-xs text-lime-300 mt-4 text-center">
-                Infografis Survei Pasar & Validasi Kebutuhan B2B (Kampoeng Roti & Grosir Buah Kalpataru) & B2C (Mahasiswa FH, FV, FBIPK)
+                Infografis Survei Pasar & Validasi Kebutuhan B2B (Kampoeng Roti & Grosir Buah Kalpataru) & B2C (Mahasiswa FH, FV, FBIPK) Lengkap dengan Cuplikan Dashboard ESG REVALUE (Arsitek Sistem: Bimo Satrio)
             </p>
         </div>
     </div>

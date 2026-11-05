@@ -223,13 +223,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const qrContainer = document.getElementById('live-qr-code');
         if (qrContainer) {
             qrContainer.innerHTML = '';
-            const qrUrl = `https://revalue.id/passport?batch=${encodeURIComponent(item.id)}`;
+            // Determine best live scan URL:
+            let qrUrl = `https://revalue-kompespiking.vercel.app/passport.html?batch=${encodeURIComponent(item.id)}`;
+            if (window.location.protocol.startsWith('http')) {
+                const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
+                qrUrl = `${window.location.origin}${basePath}/passport.html?batch=${encodeURIComponent(item.id)}`;
+            }
+
             if (typeof QRCode !== 'undefined') {
                 qrCodeInstance = new QRCode(qrContainer, {
                     text: qrUrl,
                     width: 140,
                     height: 140,
-                    colorDark: '#153F32',
+                    colorDark: '#0B2D24',
                     colorLight: '#ffffff',
                     correctLevel: QRCode.CorrectLevel.H
                 });
@@ -536,12 +542,13 @@ document.addEventListener('DOMContentLoaded', () => {
         'bimo': {
             name: 'BIMO SATRIO',
             role: 'Ketua Tim / Chief Executive Officer (CEO)',
-            subRole: 'Head of Business Development & Strategic Partnerships',
+            subRole: 'Lead System & ESG Dashboard Architect • Head of Business Dev',
             avatarIcon: 'fa-chess-king',
             badgeBg: 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40',
-            quote: '“Membangun jembatan ekonomi sirkular yang membuktikan bahwa pemulihan lingkungan dan profitabilitas bisnis dapat bersatu dalam satu tarikan nafas.”',
-            bio: 'Mahasiswa berorientasi entrepreneurship dan analisis strategis bisnis sirkular. Memimpin Tim Kompespiking dalam kompetisi nasional ECTION 2026 UNESA dengan fokus pada arsitektur model bisnis multi-pihak, penetrasi pasar B2B, dan negosiasi pasokan surplus pangan.',
+            quote: '“Membangun jembatan ekonomi sirkular berbasis transparansi data. Setiap ton surplus yang diselamatkan tervalidasi secara presisi melalui Automated ESG Dashboard.”',
+            bio: 'Mahasiswa berorientasi entrepreneurship dan perancangan sistem informasi bisnis sirkular. Memimpin Tim Kompespiking dalam merancang arsitektur model bisnis multi-pihak, spesifikasi Automated ESG Dashboard, serta negosiasi pasokan surplus pangan hulu dan penetrasi pasar B2B.',
             jobdesk: [
+                'Merancang dan memimpin spesifikasi antarmuka serta arsitektur sistem Automated ESG & Circular Supply Chain Dashboard REVALUE.',
                 'Memimpin perumusan visi strategis, model bisnis Business Model Canvas (BMC), dan peta jalan ekspansi 3 tahun REVALUE.',
                 'Bertanggung jawab penuh atas akuisisi kontrak pasokan surplus pangan hulu dengan manajemen hotel bintang 3–5, jaringan ritel supermarket, katering korporat, dan pengelola pasar induk.',
                 'Memimpin penetrasi penjualan langsung (direct sales) bahan baku tepung komposit dan purée ke UMKM bakery dan industri kuliner lokal di koridor Surabaya–Sidoarjo–Malang.',
@@ -550,12 +557,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Bertindak sebagai pembicara utama (lead presenter) mewakili tim pada penjurian Ecopreneur Competition ECTION 2026 UNESA dan forum kemitraan investor.'
             ],
             kpis: [
+                'Arsitektur Dashboard ESG & Sistem Ketertelusuran 100% siap operasional',
                 'Akuisisi 5–10 mitra pasokan hulu aktif pada Kuartal 1',
                 'Penetrasi kontrak B2B ke 15–20 UMKM bakery aktif (serapan 300 kg/bln)',
                 'Ketercapaian target omzet tahun pertama Rp252.000.000 (margin bersih 32,1%)',
-                'Pencapaian Payback Period di bawah 6 bulan sejak peluncuran'
+                'Pencapaian Payback Period 5,1 bulan sejak peluncuran'
             ],
-            skills: ['Strategic Planning', 'B2B Corporate Sales', 'Contract Negotiation', 'Financial Modeling', 'ESG Framework', 'Public Pitching']
+            skills: ['Dashboard & System Architecture', 'Strategic Business Planning', 'B2B Corporate Sales', 'Financial Modeling', 'ESG Framework', 'Public Pitching']
         },
         'putra': {
             name: 'PUTRA PANGERAN JEREMIA',
